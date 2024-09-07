@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+ 
+}
+
+#topBar {
+    background-color: rgba(220, 223, 223);
+    height: 100%;
+    width: 25%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 0 8px 0 rgba(220, 223, 223, 0.349);
+    transition: .8 ease;
+    justify-content: center;
+}
+
+.user{
+    position: absolute ;
+    top:60px;
+    color: turquoise;
+}
+
+#timer {
+    font-size: 60px;
+    letter-spacing: .5em;
+    color: turquoise;
+    letter-spacing: .5em;
+    text-shadow: 2px 2px 4px rgba(143, 146, 146, 0.603);
+    text-decoration: solid;
+    position: absolute;
+    left: 50%; 
+    top: 20px;
+    transform: translateX(-50%); 
+    margin-top: 20px;
+}
+
+.exam {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+}
+
+#qCard {
+    box-shadow: 0 4px 10px .4px rgba(35, 221, 202, 0.438);
+    height: 70vh;
+    width: 130vh;
+    border-radius: 8px;
+    margin-bottom: 50px;
+}
+
+#qCard .question {
+    border-radius: 8px;
+    /* background-color: turquoise; */
+    font-size: 32px;
+    padding: 25px;
+    border-bottom: 1px solid rgb(237, 241, 241);
+    background-color: rgba(220, 223, 223);
+}
+
+#options {
+    padding: 20px;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.option {
+    box-shadow: 0 4px 10px .4px rgba(64, 224, 208, 0.356);
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    width: 92%;
+    cursor: pointer;
+    transition: .8s ease;
+    font-size: 22px;
+}
+
+.option.active {
+    background-color: rgb(208, 211, 211);
+}
+
+.option:hover {
+    background-color: rgb(218, 221, 221);
+}
+
+#buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.btn {
+    background-color: rgb(241, 245, 245);
+    height: 50px;
+    padding: 12px;
+    width: 120px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s ease;
+    color: turquoise;
+    box-shadow: 4px 4px 6px rgba(64, 224, 208, 0.267);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background-color: rgb(218, 221, 221);
+}
+
+#bookmarkBtn {
+    background-color: rgb(241, 245, 245);
+    height: 50px;
+    padding: 12px;
+    width: 50px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease;
+    color: turquoise;
+}
+
+#bookmarkBtn:hover {
+    transform: translateY(-2px);
+    background-color: rgb(218, 221, 221);
+}
+
+.flagged i{
+    content: "\f02e";
+}
+
+#bm{
+    font-size: 38px;
+    width: 10%;
+    position: absolute;
+
+    padding: 20px;
+    /* border: 1px solid black; */
+    color: white;
+    text-shadow: 2px 4px 4px rgba(90, 167, 167, 0.459); ;
+}
+
+#flaggedQuestions {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    width: 80%;
+    position: absolute; 
+    top: 400px; 
+    padding: 10px;
+    gap: 10px;
+    transition: all .4s ease;
+    height: 280px; 
+    overflow-y: auto; 
+    right: 20px;
+    /* margin-right: 5px; */
+    scrollbar-color: rgb(47, 156, 145) #f1f1f1; 
+}
+
+#flaggedQuestions p {
+    border: 1px solid white;
+    position: relative;
+    padding: 6px;
+    border-radius: 4px;
+    background-color: white;
+    color: turquoise;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: center;
+    box-shadow: 2px 4px 4px rgba(123, 226, 226, 0.301);
+    width: 90%;
+
+}
+
+
+#flaggedQuestions p:hover{
+    transform: translateY(-2px);
+    background-color: turquoise;
+    border-color: turquoise;
+    color: white;
+    
+}
+
+
+@media (max-width: 1200px) {
+    #qCard {
+        width: 90vh;
+        height: 60vh;
+    }
+    #qCard .question {
+        font-size: 28px;
+    }
+    .option {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #qCard {
+        width: 80vh;
+        height: 55vh;
+    }
+    #qCard .question {
+        font-size: 24px;
+        padding: 20px;
+    }
+    .option {
+        font-size: 18px;
+    }
+    #buttons {
+        padding: 20px;
+    }
+    .btn {
+        width: 100px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    #topBar {
+        height: 10%;
+    }
+    #timer {
+        font-size: 30px;
+        letter-spacing: .3em;
+    }
+    #qCard {
+        width: 70vh;
+        height: 50vh;
+    }
+    #qCard .question {
+        font-size: 20px;
+        padding: 15px;
+    }
+    .option {
+        font-size: 16px;
+        padding: 15px;
+    }
+    .btn {
+        width: 90px;
+        font-size: 16px;
+        padding: 10px;
+    }
+    #bookmarkBtn {
+        width: 40px;
+        padding: 10px;
+    }
+}
